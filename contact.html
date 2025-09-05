@@ -1,0 +1,90 @@
+<!--
+  Name: Desiree Braxton
+  Date: 2025-08-17
+  File: contact.html
+  Description: Contact page with a basic, non-functional form for demonstration.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Desiree Braxton</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="site-header">
+    <!-- Developer: Branding area with logo and site title -->
+    <div class="container branding">
+      <img src="images/logo.svg" alt="Desiree Braxton logo" width="64" height="64">
+      <h1 id="site-title">Desiree Braxton Portfolio</h1>
+    </div>
+  </header>
+  <nav class="site-nav" aria-label="Primary">
+    <!-- Developer: Styled unordered list provides main navigation links -->
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="interests.html">Interests</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="container" role="main">
+    <article class="content">
+      <header>
+        <h2>Contact</h2>
+      </header>
+      <p class="lead">If you’d like to connect about projects, opportunities, or feedback, use the form below. This demo
+        doesn’t send messages yet, but it shows the structure and accessibility basics of a contact form.</p>
+      <form class="contact-form" action="#" method="post">
+        <!-- Developer: Form fields with labels and required attributes -->
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <p>Preferred Contact Method:</p>
+        <label><input type="radio" name="contact" value="email"> Email</label>
+        <label><input type="radio" name="contact" value="phone"> Phone</label><br><br>
+        
+        <p>Subscribe to:</p>
+        <label><input type="checkbox" name="updates" value="newsletter"> Newsletter</label>
+        <label><input type="checkbox" name="updates" value="offers"> Special Offers</label><br><br>
+        
+        <label for="reason">Reason for Contact:</label>
+        <select id="reason" name="reason">
+          <option value="general">General Inquiry</option>
+          <option value="project">Project Proposal</option>
+          <option value="feedback">Feedback</option>
+        </select><br><br>
+
+        <div>
+          <button type="submit">Send Message</button>
+        </div>
+      </form>
+      <p class="muted">You can also reach me via LinkedIn or email — links will be added when available.</p>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <!-- Developer: Secondary footer content -->
+    <div class="container inner">
+      <p>&copy; 2025 Desiree Braxton. All rights reserved.</p>
+      <p class="muted">Built with semantic HTML5 and a shared external CSS stylesheet.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

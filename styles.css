@@ -1,0 +1,250 @@
+/* =====================================================
+   styles.css — Shared stylesheet for all site pages
+   Author: Desiree Braxton
+   Description: Provides a consistent look/feel across
+   pages. Uses tag, class, and id selectors; documents
+   how typography, colors, navigation, images, and layout
+   are styled. CSS3 compliant.
+   ===================================================== */
+
+/* -------------- CSS Reset (basic) ------------------- */
+* {
+  box-sizing: border-box;
+}
+
+/* -------------- CSS Variables ----------------------- */
+:root {
+  --bg: #f7f8fa;
+  --surface: #ffffff;
+  --text: #23262a;
+  --muted: #5b6470;
+  --brand: #1d4ed8; /* blue */
+  --brand-2: #0ea5e9; /* cyan */
+  --nav-bg: #0f172a; /* slate-900 */
+  --nav-link: #e5e7eb;
+  --nav-link-hover: #93c5fd;
+  --footer-bg: #0b1220;
+}
+
+/* -------------- Base Typography --------------------- */
+html {
+  font-size: 16px;
+} /* default unit base */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", "Segoe UI", Arial, Helvetica, sans-serif; /* font-family */
+  color: var(--text); /* font color */
+  background: var(--bg); /* background color */
+  line-height: 1.6;
+}
+
+/* Demonstrate font styles/weights */
+em {
+  font-style: italic;
+} /* font style */
+strong {
+  font-weight: 700;
+} /* font weight */
+
+/* Control text margins & padding */
+p {
+  margin: 0 0 1rem 0;
+} /* text margin */
+.lead {
+  font-size: 1.125rem;
+} /* font size example */
+.block {
+  padding: 1rem;
+} /* text padding via class */
+
+/* -------------- Layout Helpers ---------------------- */
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* -------------- Header ------------------------------ */
+header.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid #e5e7eb;
+}
+header.site-header .branding {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+#site-title {
+  /* id selector example */
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+/* -------------- Navigation -------------------------- */
+/* Styled unordered list for navigation links */
+nav.site-nav {
+  background: var(--nav-bg);
+}
+nav.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+nav.site-nav a {
+  color: var(--nav-link);
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+nav.site-nav a:hover,
+nav.site-nav a:focus {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--nav-link-hover);
+  outline: none;
+}
+/* Current page indicator via aria-current */
+nav.site-nav a[aria-current="page"] {
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  color: white;
+}
+
+/* -------------- Main Content ------------------------ */
+main {
+  background: var(--surface);
+  margin: 1rem auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+}
+main .content {
+  padding: 1rem 1.25rem 1.5rem;
+}
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+}
+h2 {
+  margin-top: 0.5rem;
+}
+
+/* -------------- Images ------------------------------ */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.figure {
+  margin: 1rem 0;
+  text-align: center;
+}
+.figure img {
+  border-radius: 0.5rem;
+}
+.figure figcaption {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
+
+/* -------------- Footer ------------------------------ */
+footer.site-footer {
+  background: var(--footer-bg);
+  color: #cbd5e1;
+  margin-top: 2rem;
+}
+footer.site-footer .inner {
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+/* -------------- Links (global) ---------------------- */
+a {
+  color: var(--brand);
+}
+a:hover,
+a:focus {
+  color: var(--brand-2);
+  outline: none;
+}
+
+/* -------------- Forms (contact page) ---------------- */
+form.contact-form {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 560px;
+}
+.contact-form label {
+  font-weight: 600;
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font: inherit;
+}
+.contact-form textarea {
+  min-height: 140px;
+}
+.contact-form button[type="submit"] {
+  padding: 0.6rem 0.9rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+.contact-form button[type="submit"]:hover,
+.contact-form button[type="submit"]:focus {
+  filter: brightness(1.05);
+}
+
+/* -------------- Utility ----------------------------- */
+.center {
+  text-align: center;
+}
+.muted {
+  color: var(--muted);
+}
+hr.sep {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 1rem 0;
+}
+
+/* -------------- Gallery Thumbnails ------------------ */
+.gallery {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.gallery img {
+  width: 180px; /* Thumbnail size */
+  height: auto;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+  border-color: var(--brand); /* Uses your brand blue */
+}
+
+.gallery .figure {
+  text-align: center;
+}
